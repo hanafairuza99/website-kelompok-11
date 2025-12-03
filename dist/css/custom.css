@@ -1,0 +1,35 @@
+/* ===== Portfolio thumbnails uniform (4:3) ===== */
+.portfolio-item .portfolio-link,
+.portfolio-item img.img-fluid {
+  display: block;
+}
+
+/* wrapper approach: pastikan thumbnail area memiliki rasio 4:3 */
+.portfolio-item .portfolio-link {
+  width: 100%;
+  /* gunakan aspect-ratio bila browser modern, fallback height di bawah */
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  position: relative;
+}
+
+/* target img inside portfolio-link: fill area and crop center */
+.portfolio-item .portfolio-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* crop agar area penuh tanpa distorsi */
+  object-position: center center;
+  display: block;
+}
+
+/* fallback untuk browser lama (jika aspect-ratio tidak didukung) */
+@supports not (aspect-ratio: 1) {
+  .portfolio-item .portfolio-link {
+    height: 0;
+    padding-top: calc(100% * 3 / 4); /* 4:3 -> padding-top 75% */
+  }
+  .portfolio-item .portfolio-link img {
+    position: absolute;
+    top: 0; left: 0;
+  }
+}

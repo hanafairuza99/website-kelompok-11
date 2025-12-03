@@ -1,0 +1,29 @@
+/* ==== Custom styling untuk timeline circular images ==== */
+
+/* ukuran lingkaran — ubah sesuai desain */
+.timeline-image {
+  width: 220px;               /* diameter lingkaran di desktop */
+  height: 220px;
+  border-radius: 50%;         /* buat bundar */
+  overflow: hidden;           /* penting: potong bagian gambar yang meluap */
+  margin: 0 auto;             /* center horizontal jika perlu */
+  box-shadow: 0 4px 0 rgba(0,0,0,0.04) inset; /* opsional */
+  display: flex;              /* untuk align gambar */
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* jika ingin warna fill ganti di sini */
+}
+
+/* gambar mengisi area lingkaran dan terpotong rapi */
+.timeline-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* pengaturan kunci */
+  object-position: center;    /* bisa diganti center top / center 40% untuk menyesuaikan fokus */
+  display: block;
+}
+
+/* Responsive: buat lingkaran lebih kecil pada device kecil */
+@media (max-width: 768px) {
+  .timeline-image { width: 140px; height: 140px; }
+}

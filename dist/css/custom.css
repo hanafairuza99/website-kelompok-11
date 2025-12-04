@@ -33,3 +33,44 @@
     top: 0; left: 0;
   }
 }
+/* =======================
+   CUSTOM STYLE UNTUK BAGIAN TEAM
+   ======================= */
+
+/* Pastikan tiap card anggota rapih dan center */
+#team .col-lg-4.col-sm-6.mb-5.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ukuran & format foto anggota */
+.team-img {
+  width: 220px;          /* diameter foto di desktop */
+  height: 220px;
+  border-radius: 50%;    /* kalau ada rounded-circle dari Bootstrap, ini menguatkan */
+  object-fit: cover;     /* isi lingkaran, crop pinggirnya kalau perlu */
+  object-position: center;
+  display: block;
+  max-width: 100%;       /* jaga tetap responsif */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* opsional efek bayangan */
+}
+
+/* Di layar kecil, foto agak dikecilkan */
+@media (max-width: 768px) {
+  .team-img {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Jaga jarak antar nama & foto */
+#team h4 {
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+#team p.small {
+  margin-top: 0.15rem;
+}
